@@ -5,10 +5,10 @@ const secciones = {
     <div class="about-container">
     <div class="about-center">
         <span class="about-tag">NUESTRO INSTITUTO</span>
-        <h2>
+        <h1>
             Excelencia académica con
             <span class="purple-text">visión de futuro</span>
-        </h2>
+        </h1>
         <p>
             El Instituto Oficial Polivalente Tiburcio Carías Andino es una institución pública de educación media ubicada en el municipio de Las Vegas, departamento de Santa Bárbara. Desde su fundación, ha contribuido a la formación académica, técnica y humana de generaciones de jóvenes de la región.
         </p>
@@ -17,7 +17,7 @@ const secciones = {
         </p>
         <p>
             A través de sus diferentes modalidades educativas, el instituto promueve el desarrollo integral de sus estudiantes, fortaleciendo sus conocimientos, habilidades y capacidades para enfrentar los retos del presente y construir un mejor futuro.
-        </p>
+        </p><br>
         <button class="btn-more" onclick="cargarSeccion('historia')">
             MÁS SOBRE NOSOTROS ➔
         </button>
@@ -27,7 +27,11 @@ const secciones = {
             <img src="ITCA.png" alt="Instalaciones del Instituto Tiburcio Carías Andino">
         </div>
     </div>
+
+    
     <div class="about-right">
+
+    
         <div class="info-item">
             <div class="info-icon">📘</div>
             <div class="info-text">
@@ -37,6 +41,8 @@ const secciones = {
                 </p>
             </div>
         </div>
+
+
         <div class="info-item">
             <div class="info-icon">⚙️</div>
             <div class="info-text">
@@ -46,6 +52,8 @@ const secciones = {
                 </p>
             </div>
         </div>
+
+
         <div class="info-item">
             <div class="info-icon">🎓</div>
             <div class="info-text">
@@ -55,6 +63,8 @@ const secciones = {
                 </p>
             </div>
         </div>
+
+
     </div>
 </div>
 </section>`,
@@ -63,7 +73,7 @@ const secciones = {
 
 <section class="about-container">
     <div class="about-center">
-    <h2>NUESTRA HISTORIA</h2><br>
+    <h1>NUESTRA HISTORIA</h1><br>
     <p>
         El Instituto Oficial Polivalente Tiburcio Carías Andino es una institución educativa pública ubicada en el municipio de Las Vegas, departamento de Santa Bárbara, Honduras. Desde sus inicios, ha tenido como propósito brindar oportunidades de formación académica y técnica a la juventud de la región, contribuyendo al desarrollo educativo y social de la comunidad.
     </p><br>
@@ -113,7 +123,7 @@ valores: `
 
 <section class="about-container">
     <div class="about-center">
-    <h2>VALORES INSTITUCIONALES</h2><br>
+    <h1>VALORES INSTITUCIONALES</h1><br>
     <p>
         Los valores institucionales constituyen la base de la formación integral que promueve el Instituto Oficial Polivalente Tiburcio Carías Andino. Estos principios orientan la conducta de estudiantes, docentes, personal administrativo y padres de familia, fortaleciendo una convivencia armoniosa y el compromiso con la excelencia educativa.
     </p><br>
@@ -313,7 +323,7 @@ autoridades: `
 <section class="about-container">
     <div class="about-center">
 
-        <h2>AUTORIDADES</h2><br>
+        <h1>NUESTRAS AUTORIDADES</h1><br>
 
         <p>
             El Instituto Oficial Polivalente Tiburcio Carías Andino cuenta con un equipo directivo comprometido con la formación académica, técnica y humana de los estudiantes, promoviendo una educación de calidad basada en valores, disciplina y excelencia.
@@ -474,23 +484,23 @@ galeria: `
 
 };
 
-    noticias: `
-<section>
+        noticias: `
+    <section>
 
-<h1>Noticias y Avisos</h1>
+    <h1>Noticias y Avisos</h1>
 
-<div class="card">
-<h3>Inicio de Clases 2026</h3>
-<p>Información sobre el inicio del año académico.</p>
-</div>
+    <div class="card">
+    <h3>Inicio de Clases 2026</h3>
+    <p>Información sobre el inicio del año académico.</p>
+    </div>
 
-<div class="card">
-<h3>Feria Científica</h3>
-<p>Participación de estudiantes en proyectos innovadores.</p>
-</div>
+    <div class="card">
+    <h3>Feria Científica</h3>
+    <p>Participación de estudiantes en proyectos innovadores.</p>
+    </div>
 
-</section>
-`,
+    </section>
+    `,
 
 document.getElementById("topBtn")
 .addEventListener("click", () => {
