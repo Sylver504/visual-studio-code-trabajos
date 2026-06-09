@@ -3,7 +3,7 @@ const secciones = {
 
 <section class="about-section">
     <div class="about-container">
-    <div class="about-left">
+    <div class="about-center">
         <span class="about-tag">NUESTRO INSTITUTO</span>
         <h2>
             Excelencia académica con
@@ -24,7 +24,7 @@ const secciones = {
     </div>
     <div class="about-center">
         <div class="image-card">
-            <img src="foto1.png" alt="Instalaciones del Instituto Tiburcio Carías Andino">
+            <img src="ITCA.png" alt="Instalaciones del Instituto Tiburcio Carías Andino">
         </div>
     </div>
     <div class="about-right">
