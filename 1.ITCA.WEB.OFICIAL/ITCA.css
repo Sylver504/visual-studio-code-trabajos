@@ -486,21 +486,6 @@ section{
     margin-bottom:60px;
 }
 
-#topBtn{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:50px;
-    height:50px;
-    border:none;
-    border-radius:50%;
-    background:var(--two);
-    color:white;
-    font-size:20px;
-    cursor:pointer;
-    z-index:1000;
-}
-
 .about-container{
     justify-items:center;
 }
