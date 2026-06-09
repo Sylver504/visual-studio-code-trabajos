@@ -157,11 +157,13 @@ body{
 .hero-content h1{
     font-size:4rem;
     margin-bottom:15px;
+    color: white;
 }
 
 .hero-content p{
     font-size:1.1rem;
     line-height:1.8;
+    color: white;
 }
 
 /* =====================
@@ -329,6 +331,17 @@ body{
 
 .image-card:hover img{
     transform:scale(1.08);
+}
+
+/* Asegurar que todo texto dentro de las tarjetas sea blanco */
+.card, .valor-card, .image-card{
+    color: white;
+}
+
+.card h1, .card h2, .card h3, .card p,
+.valor-card h1, .valor-card h2, .valor-card h3, .valor-card p,
+.image-card h1, .image-card h2, .image-card h3, .image-card p{
+    color: white;
 }
 
 /* =====================
@@ -514,7 +527,8 @@ section{
 }
 
 .valor-card{
-    background:white;
+    background:rgba(26,11,46,.8);
+    color: white;
     padding:25px;
     border-radius:15px;
     box-shadow:0 5px 20px rgba(0,0,0,.08);
@@ -523,4 +537,13 @@ section{
 
 .valor-card:hover{
     transform:translateY(-5px);
+}
+
+/* Asegurar color blanco para ubicación del instituto */
+.hero-content h3{
+    color: white;
+}
+
+footer p{
+    color: white;
 }
