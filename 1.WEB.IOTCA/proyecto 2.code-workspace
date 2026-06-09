@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../proyecto 2"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "visual studio code trabajos"
+	}
+}

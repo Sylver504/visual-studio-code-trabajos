@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="description"
+content="Sitio web oficial del Instituto Oficial Polivalente Tiburcio Carías Andino, ubicado en Las Vegas, Santa Bárbara, Honduras.">
+    <link rel="icon" href="logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instituto Oficial Polivalente Tiburcio Carías Andino</title>
+    <link rel="stylesheet" href="ppv2 copy.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Escudo oficial del Instituto">
+            <span>Instituto Tiburcio Carías Andino</span>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#" onclick="cargarSeccion('inicio'); return false;">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Sobre Nosotros ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" onclick="cargarSeccion('historia'); return false;">Historia</a></li>
+                        <li><a href="#" onclick="cargarSeccion('mision'); return false;">Misión y Visión</a></li>
+                        <li><a href="#" onclick="cargarSeccion('valores'); return false;">Valores Institucionales</a></li>
+                        <li><a href="#" onclick="cargarSeccion('autoridades'); return false;">Autoridades</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" onclick="cargarSeccion('ofertas-academicas'); return false;">Ofertas Académicas</a></li>
+                <li><a href="#" onclick="cargarSeccion('galeria'); return false;">Galería</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#" onclick="cargarSeccion('noticias'); return false;">Noticias</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+            <h1>Instituto Oficial Polivalente Tiburcio Carías Andino</h1>
+
+            <p>
+                Formando jóvenes con excelencia académica, valores y
+                competencias técnicas para construir un mejor futuro.
+            </p>
+
+            <h3>Las Vegas, Santa Bárbara, Honduras</h3>
+        </div>
+
+
+
+    </section>
+
+    
+
+    <section class="stats">
+        <div class="card"><h2>+1200</h2><p>Estudiantes</p></div>
+        <div class="card"><h2>+80</h2><p>Docentes</p></div>
+        <div class="card"><h2>4</h2><p>Modalidades</p></div>
+        <div class="card"><h2>+45</h2><p>Años de Historia</p></div>
+    </section>
+
+    <main id="contenedor-dinamico"></main>
+
+    <footer id="contacto">
+    <h2>Contacto</h2>
+
+    <p>Facebook Oficial</p>
+<p>WhatsApp Institucional</p>
+<p>Correo Electrónico</p>
+
+    <p><strong>Dirección:</strong> Las Vegas, Santa Bárbara, Honduras</p>
+
+    <p><strong>Teléfono:</strong> Próximamente</p>
+
+    <p><strong>Correo electrónico:</strong> info@instituto.edu.hn</p>
+
+    <p>
+        © 2026 Instituto Oficial Polivalente
+        Tiburcio Carías Andino.
+    </p>
+</footer>
+
+    <script src="ppv2 copy.js"></script>
+    
+    <script>document.addEventListener("DOMContentLoaded", () => {
+        cargarSeccion('inicio');
+    });
+    </script>
+
+    <button id="topBtn">↑</button>
+
+</body>
+</html>

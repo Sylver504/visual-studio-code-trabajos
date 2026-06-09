@@ -1,0 +1,102 @@
+
+nav{
+    background-color: #081423;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a{
+    color: white;
+    text-decoration:none ;
+    margin: 15px;
+    font-weight: bold;
+}
+
+nav a:hover{
+    color: gold;
+}
+
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #0b1a2f;
+    color: white;
+    margin: 0;
+}
+/*encabezado*/
+header{
+    background-color: #081423;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid gold;
+}
+
+h1{
+    color: gold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 3px;
+}
+
+h2{
+    color: gold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* secciones */
+section{
+    padding: 40px;
+    text-align: center;
+}
+
+/*productos*/
+div{
+    display: inline-block;
+    margin: 20px;
+    padding: 10px;
+    background-color: #081423;
+    border: 1px solid gold;
+    width: 220px;
+}
+
+/*efecto hover*/
+div:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+/*imagenes*/
+img{
+    margin: 10px;
+    border: 2px solid gold;
+}
+
+/*formulario */
+form{
+    background-color: #081423;
+    padding: 20px;
+    width: 300px;
+    margin: auto;
+}
+
+/*imputs*/
+.imput, select, textarea{
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+
+}
+
+/* boton */
+button{
+    background-color: gold;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/*footer*/
+footer{
+    background-color: #081423;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}

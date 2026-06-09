@@ -1,0 +1,195 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+background:linear-gradient(to bottom, #e8f5e9, #f4f7f6);
+color:#333;
+line-height:1.6;
+}
+
+/* Header */
+
+header{
+background-image:url("https://images.unsplash.com/photo-1501785888041-af3ef285b470");
+background-size:cover;
+background-position:center;
+color:white;
+text-align:center;
+padding:100px 20px;
+position:relative;
+}
+
+header::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.5);
+}
+
+header h1,
+header p{
+position:relative;
+z-index:1;
+}
+
+header h1{
+font-size:50px;
+margin-bottom:10px;
+}
+
+header p{
+font-size:20px;
+}
+
+/* Navegación */
+
+nav{
+background:#1f3d2b;
+padding:15px;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:15px;
+font-weight:bold;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#7ef58a;
+}
+
+/* Secciones */
+
+section{
+padding:60px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+section h2{
+margin-bottom:25px;
+font-size:30px;
+color:#1f3d2b;
+text-align:center;
+}
+
+/* Información */
+
+#info{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+#info ul{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+#info li{
+margin:10px 0;
+}
+
+/* Galería */
+
+#galeria{
+text-align:center;
+}
+
+#galeria img{
+width:30%;
+margin:10px;
+border-radius:12px;
+transition:0.4s;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+#galeria img:hover{
+transform:scale(1.05);
+}
+
+/* Formulario */
+
+form{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+max-width:600px;
+margin:auto;
+}
+
+input, textarea{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border-radius:8px;
+border:1px solid #ccc;
+transition:0.3s;
+}
+
+input:focus,
+textarea:focus{
+outline:none;
+border-color:#2e5e3e;
+box-shadow:0 0 5px rgba(46,94,62,0.3);
+}
+
+button{
+background:linear-gradient(45deg,#2e5e3e,#1f3d2b);
+color:white;
+padding:12px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+transition:0.3s;
+width:100%;
+}
+
+button:hover{
+transform:translateY(-2px);
+box-shadow:0 5px 10px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+
+footer{
+background:#37d275;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+#info{
+grid-template-columns:1fr;
+}
+
+#galeria img{
+width:90%;
+}
+
+header h1{
+font-size:35px;
+}
+
+}

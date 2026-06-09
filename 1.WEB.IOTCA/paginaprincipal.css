@@ -1,0 +1,560 @@
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+/* ==========================================================================
+   1. VARIABLES DE COLORES (Tu paleta oficial: Morados y Rosa Fucsia)
+   ========================================================================== */
+:root {
+    --primary: #5B2D90;    /* Morado base */
+    --secondary: #3D1E63;  /* Morado oscuro para los títulos principales */
+    --accent: #E91E63;     /* Rosa/Fucsia neón para botones y detalles */
+    --dark: #0F0F0F;       /* Negro profundo para el fondo del footer */
+    --light: #F8F8F8;      /* Blanco grisáceo para el fondo general */
+}
+
+/* ==========================================================================
+   2. CONFIGURACIÓN GENERAL (Limpia los márgenes del navegador)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Mantiene el tamaño fijo de las tarjetas sin deformarse */
+    font-family: 'Poppins', sans-serif; /* Aplica tu fuente moderna */
+}
+
+html {
+    scroll-behavior: smooth; /* Hace que la pantalla se deslice suavemente al usar el menú */
+}
+
+body {
+    background: var(--light);
+    overflow-x: hidden; /* Evita que la página se mueva hacia los lados en teléfonos */
+}
+
+/* ==========================================================================
+   3. BARRA DE NAVEGACIÓN (Menú superior transparente tipo vidrio)
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    width: 90%;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* Centra la barra flotante */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border-radius: 20px;
+    background: rgba(20, 20, 20, 0.45); /* Fondo oscuro translúcido */
+    backdrop-filter: blur(20px);        /* Efecto borroso de fondo */
+    -webkit-backdrop-filter: blur(20px); 
+    z-index: 999;                       /* Siempre por encima del contenido */
+    transition: 0.4s;
+}
+
+.navbar.scrolled {
+    background: rgba(15, 15, 15, 0.95);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-weight: 700;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   ESTILOS DE LA LISTA DEL MENÚ PRINCIPAL
+   -------------------------------------------------------------------------- */
+.nav-links {
+    display: flex;         /* Pone los menús principales en fila horizontal */
+    list-style: none;      /* ¡QUITA LOS PUNTITOS NEGROS DE LAS LISTAS! */
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;    /* Permite que el submenú se posicione justo debajo */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none; /* Quita el subrayado de las letras */
+    padding: 10px 15px;
+    display: block;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+/* Línea rosa animada para los botones de la lista principal */
+.nav-links > li > a::after {
+    content: "";
+    position: absolute;
+    left: 15px;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: 0.3s;
+}
+
+.nav-links > li:hover > a::after {
+    width: calc(100% - 30px);
+}
+
+/* --------------------------------------------------------------------------
+   ESTILOS EXCLUSIVOS DE LOS SUBMENÚS (Dropdown)
+   -------------------------------------------------------------------------- */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;             /* Se coloca exactamente debajo del menú padre */
+    left: 0;
+    background: rgba(20, 20, 20, 0.95); /* Fondo oscuro para el submenú */
+    backdrop-filter: blur(10px);
+    list-style: none;      /* ¡QUITA LOS PUNTITOS DE LOS SUBMENÚS! */
+    margin: 0;
+    padding: 10px 0;
+    min-width: 240px;      /* Ancho mínimo para que los nombres queden en una línea */
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    
+    /* ESCONDE EL SUBMENÚ DE INICIO */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px); /* Pequeño efecto de desplazamiento */
+    transition: all 0.3s ease;
+}
+
+/* Estilo de los enlaces dentro del submenú */
+.dropdown-menu a {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Efecto al pasar el mouse sobre una opción del submenú */
+.dropdown-menu a:hover {
+    background: var(--primary); /* Se pinta con tu color morado principal */
+    color: white;
+}
+
+/* MUESTRA EL SUBMENÚ AL PASAR EL RATÓN */
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Sube suavemente a su posición */
+}
+
+/* ==========================================================================
+   4. HERO (Sección gigante de bienvenida con foto de portada)
+   ========================================================================== */
+.hero {
+    height: 100vh; /* Ocupa toda la pantalla de la computadora o teléfono */
+    background: url('foto1.png') no-repeat center center/cover; /* Tu imagen de portada */
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    position: relative;
+}
+
+/* Filtro oscuro encima de la foto para que las letras blancas se lean perfectamente */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(35, 0, 70, 0.88),
+        rgba(0, 0, 0, 0.35)
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Se posiciona por encima del filtro oscuro */
+    color: white;
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: 5rem;
+    line-height: 1.1;
+    animation: fadeUp 1s ease; /* Se anima al cargar la página por primera vez */
+}
+
+.hero p {
+    margin: 25px 0;
+    font-size: 1.1rem;
+    animation: fadeUp 1.2s ease;
+}
+
+/* ==========================================================================
+   5. BOTONES INTERACTIVOS
+   ========================================================================== */
+button {
+    border: none;
+    padding: 15px 40px;
+    border-radius: 40px; /* Bordes completamente ovalados */
+    background: var(--accent);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px); /* Levanta el botón un poquito al poner el mouse */
+    box-shadow: 0 10px 25px rgba(233, 30, 99, 0.4); /* Le da un brillo rosa de fondo */
+}
+
+/* El botón transparente con borde rosa de la sección Noticias */
+.secondary {
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+}
+
+.secondary:hover {
+    background: var(--accent);
+    color: white;
+}
+
+/* ==========================================================================
+   6. DISTRIBUCIÓN DE CUADRÍCULAS / ESTADÍSTICAS FLOTANTES MEJORADAS
+   ========================================================================== */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Divide la fila en 4 columnas idénticas */
+    gap: 20px;
+    padding: 0 10%;
+    margin-top: -50px; /* Margen negativo para que flote elegantemente sobre el Hero */
+    position: relative;
+    z-index: 10;
+}
+
+/* Estilo estético para los bloques/tarjetas de estadísticas de la maqueta */
+.stats .card {
+    background: rgba(26, 11, 46, 0.45); /* Fondo oscuro translúcido */
+    backdrop-filter: blur(15px);        /* Efecto de vidrio borroso */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08); /* Borde fino premium */
+    padding: 22px 25px;
+    border-radius: 16px; /* Bordes redondeados sutiles */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    color: white; /* Texto blanco */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Sombra profunda */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efecto levitación y brillo en los stats */
+.stats .card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(157, 78, 221, 0.4);
+}
+
+/* Mantenemos el estilo original de las demás tarjetas de la página */
+.card, .career-card, .life-card, .news-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Sombra suave de fondo */
+}
+
+/* ==========================================================================
+   7. SECCIÓN NUESTRO INSTITUTO (Estilo Idéntico a la Maqueta Oficial)
+   ========================================================================== */
+.about-section {
+    background-color: #FFFFFF; /* Fondo blanco impecable como en la maqueta */
+    padding: 120px 10% 100px 10%;
+    color: #2D3748;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr 1fr; /* 3 columnas: textos, pantera y valores */
+    gap: 50px;
+    align-items: center;
+}
+
+/* --- COLUMNA IZQUIERDA --- */
+.about-tag {
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.about-left h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--secondary);
+    margin-bottom: 25px;
+}
+
+.about-left .purple-text {
+    color: var(--primary); /* Cambia "visión de futuro" a tu color morado base */
+}
+
+.about-left p {
+    color: #5A6578;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.btn-more {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-more:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(91, 45, 144, 0.2);
+}
+
+/* --- COLUMNA CENTRAL (Tarjeta de la Pantera Negra) --- */
+.about-center {
+    display: flex;
+    justify-content: center;
+}
+
+.image-card {
+    background: #0B0114; /* Fondo interno oscuro para que la pantera resalte */
+    border-radius: 32px; /* Esquinas muy suavizadas */
+    overflow: hidden;
+    width: 100%;
+    max-width: 380px;
+    height: 460px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease;
+}
+
+.image-card:hover {
+    transform: scale(1.02);
+}
+
+.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la pantera perfectamente sin estirarla */
+    display: block;
+}
+
+/* --- COLUMNA DERECHA (Misión, Visión, Valores) --- */
+.about-right {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.info-icon {
+    font-size: 1.2rem;
+    background: #F3E8FF; /* Círculo de fondo violeta pastel muy estético */
+    color: var(--primary);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 5px 15px rgba(91, 45, 144, 0.05);
+}
+
+.info-text h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--secondary);
+    margin-bottom: 5px;
+}
+
+.info-text p {
+    font-size: 0.9rem;
+    color: #64748B;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   8. SECCIÓN CARRERAS Y MODALIDADES (Fondo espacial morado)
+   ========================================================================== */
+.careers {
+    background: linear-gradient(135deg, #140023, #32004f);
+    color: white;
+    padding: 100px 10%;
+}
+
+.careers h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+/* Rejilla automática: acomoda las tarjetas solas si no caben en pantallas pequeñas */
+.career-grid, .life-container, .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* Estilo único para las tarjetas de las carreras */
+.career-card {
+    background: #1f1f1f;
+    padding: 0; /* Permite que la imagen choque con los bordes de la tarjeta */
+    overflow: hidden;
+}
+
+.career-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.career-card h3 {
+    padding: 20px;
+}
+
+/* ==========================================================================
+   9. VIDA ESTUDIANTIL Y NOTICIAS
+   ========================================================================== */
+.student-life, .news {
+    padding: 100px 10%;
+}
+
+.student-life h2, .news h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: var(--secondary);
+}
+
+.news .buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center; /* Centra el botón perfectamente */
+}
+
+/* Efecto levitación: Se aplica a cualquier tarjeta al pasar el mouse por encima */
+.card:hover, .career-card:hover, .life-card:hover, .news-card:hover {
+    transform: translateY(-10px); /* Sube suavemente */
+    box-shadow: 0 20px 40px rgba(91, 45, 144, 0.25); /* Sombra morada neón */
+}
+
+/* ==========================================================================
+   10. CONFIGURACIÓN PARA EFECTOS DE MOVIMIENTO CON JAVASCRIPT
+   ========================================================================== */
+.card, .career-card, .life-card, .news-card, .about-left, .about-center, .about-right {
+    opacity: 1;
+    transition: all 0.8s ease; 
+}
+
+/* Cuando usemos JavaScript, esta clase se activará sola al deslizar la página */
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   11. PIE DE PÁGINA (Footer oscuro)
+   ========================================================================== */
+footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 60px;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* ==========================================================================
+   12. ANIMACIÓN INICIAL (Keyframes)
+   ========================================================================== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   13. DISEÑO RESPONSIVO (Adaptación automática para Teléfonos Celulares)
+   ========================================================================== */
+@media(max-width: 1024px) {
+    .about-container {
+        grid-template-columns: 1fr; /* Pasa a una sola columna en pantallas chicas */
+        text-align: center;
+        gap: 40px;
+    }
+    .info-item {
+        text-align: left;
+    }
+    .image-card {
+        margin: 0 auto;
+    }
+}
+
+@media(max-width: 768px) {
+    .navbar {
+        width: 100%;
+        top: 0;
+        border-radius: 0; /* Quita los bordes redondeados del menú en teléfonos */
+    }
+    .hero h1 {
+        font-size: 3rem; /* Letras de bienvenida más pequeñas para pantallas chicas */
+    }
+    .stats {
+        grid-template-columns: 1fr; /* Coloca las tarjetas una debajo de otra en modo columna */
+        margin-top: 20px;
+    }
+    nav {
+        display: none; /* Esconde el menú de texto para evitar que se amontone en pantallas chicas */
+    }
+}
+
+/* ==========================================================================
+   AJUSTE PARA EL CONTENEDOR DINÁMICO (Corrige el error de pantalla blanca)
+   ========================================================================== */
+#contenedor-dinamico {
+    opacity: 1;
+    transition: opacity 0.25s ease-in-out;
+}

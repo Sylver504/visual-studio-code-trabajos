@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Instituto Oficial Polivalente Tiburcio Carías Andino</title>
+
+    <!-- Enlace unificado a tu archivo de estilos principal -->
+    <link rel="stylesheet" href="paginaprincipal.css">
+
+    <!-- Fuentes de Google (Poppins) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght=300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ==========================================================================
+       BARRA DE NAVEGACIÓN (Menú superior tipo vidrio)
+       ========================================================================== -->
+    <header class="navbar">
+        
+        <div class="logo">
+            <img src="logo.png" alt="Escudo oficial del Instituto Tiburcio Carías Andino">
+            <span>Instituto Oficial Polivalente Tiburcio Carías Andino</span>
+        </div>
+
+        <nav>
+            <ul class="nav-links">
+                
+                <li><a href="#" onclick="cargarSeccion('inicio'); return false;">inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Sobre Nosotros ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" onclick="cargarSeccion('historia'); return false;">Historia</a></li>
+                        <li><a href="#" onclick="cargarSeccion('mision-vision'); return false;">Mision y Vision</a></li>
+                        <li><a href="#" onclick="cargarSeccion('valores'); return false;">Valores</a></li>
+                        <li><a href="#" onclick="cargarSeccion('autoridades'); return false;">Autoridades</a></li>
+                        <li><a href="#" onclick="cargarSeccion('instalaciones'); return false;">Instalaciones</a></li>
+        
+                    </ul>
+                </li>
+
+                <li><a href="#" onclick="cargarSeccion('inicio'); return false;">inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Ciclo Básico y Talleres ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" onclick="cargarSeccion('ciclobasico y talleres'); return false;"></a></li>
+                        <li><a href="tercer-ciclo.html">Tercer Ciclo (7mo - 9no)</a></li>
+                        <li><a href="talleres-modulares.html">Talleres Modulares</a></li>
+                        <li><a href="jornadas.html">Jornadas</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#" onclick="cargarSeccion('inicio'); return false;">inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Bachilleratos ▾</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="btp-informatica.html">BTP en Informática</a></li>
+                        <li><a href="btp-finanzas.html">BTP en Contaduría y Finanzas</a></li>
+                        <li><a href="bch.html">Ciencias y Humanidades (BCH)</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="galeria.html">Galería</a></li>
+
+                <li><a href="#contacto">Contacto</a></li>
+
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- ==========================================================================
+       HERO (Sección de bienvenida principal)
+       ========================================================================== -->
+    <section id="inicio" class="hero">
+
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+            <h1>Formando líderes para el futuro</h1>
+            <p>
+                Educación pública de calidad con visión,
+                disciplina y excelencia académica.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- ==========================================================================
+       TARJETAS DE ESTADÍSTICAS (Flotantes con diseño de cristal)
+       ========================================================================== -->
+    <section class="stats">
+
+        <div class="card">
+            <h2>+1200</h2>
+            <p>Estudiantes</p>
+        </div>
+
+        <div class="card">
+            <h2>+80</h2>
+            <p>Docentes</p>
+        </div>
+
+        <div class="card">
+            <h2>4</h2>
+            <p>Modalidades</p>
+        </div>
+
+        <div class="card">
+            <h2>+45</h2>
+            <p>Años de Historia</p>
+        </div>
+
+    </section>
+
+    <!-- ==========================================================================
+       CONTENEDOR DINÁMICO (Aquí empieza la envoltura mágica)
+       ========================================================================== -->
+    <main id="contenedor-dinamico">
+
+        <!-- SECCIÓN NUESTRO INSTITUTO -->
+        <section id="instituto" class="about-section">
+            <div class="about-container">
+                
+                <!-- Columna Izquierda: Títulos y Descripción Distribuida -->
+                <div class="about-left">
+                    <span class="about-tag">NUESTRO INSTITUTO</span>
+                    <h2>Excelencia académica con <span class="purple-text">visión de futuro</span></h2>
+                    
+                    <p>
+                        El Instituto Oficial Polivalente Tiburcio Carías Andino es un centro educativo público comprometido con el desarrollo educativo de la región occidental de Honduras.
+                    </p>
+                    
+                    <p>
+                        Ubicado en el municipio de Las Vegas, Santa Bárbara, atendemos con orgullo a jóvenes de diversas comunidades aledañas, preparándolos integralmente para los desafíos del nivel universitario o el mercado técnico laboral.
+                    </p>
+                    
+                    <!-- Cambié la función del botón para que use el JavaScript que haremos en el siguiente paso -->
+                    <button class="btn-more" onclick="cargarSeccion('historia')">MÁS SOBRE NOSOTROS ➔</button>
+                </div>
+
+                <!-- Columna Central: Espacio para Imagen Institucional -->
+                <div class="about-center">
+                    <div class="image-card">
+                        <img src="foto1.png" alt="Instalaciones del Instituto Tiburcio Carías Andino">
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Enfoques Clave -->
+                <div class="about-right">
+                    <div class="info-item">
+                        <div class="info-icon">📘</div>
+                        <div class="info-text">
+                            <h3>Educación Polivalente</h3>
+                            <p>Combinamos con éxito la formación académica científica con orientaciones técnicas adaptadas a la demanda profesional actual.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">⚙️</div>
+                        <div class="info-text">
+                            <h3>Desarrollo Integral</h3>
+                            <p>Potenciamos el talento de nuestros estudiantes mediante actividades científicas, culturales, tecnológicas y deportivas.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">🤝</div>
+                        <div class="info-text">
+                            <h3>Vinculación Superior</h3>
+                            <p>Mantenemos lazos estratégicos y convenios activos con universidades de prestigio como la UCENM para la orientación vocacional.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    <!-- ==========================================================================
+       Fin de la envoltura mágica
+       ========================================================================== -->
+    
+    <!-- ==========================================================================
+       PIE DE PÁGINA (Footer)
+       ========================================================================== -->
+    <footer id="contacto">
+
+        <h2>Contacto</h2>
+        <p>Las Vegas, Santa Bárbara, Honduras</p>
+        <p>info@instituto.edu.hn</p>
+        <p>©️ 2026 Instituto Oficial Polivalente Tiburcio Carías Andino</p>
+
+    </footer>
+
+    <!-- Script de movimientos y efectos -->
+    <script src="paginaprincipal.js"></script>
+
+</body>
+</html>
