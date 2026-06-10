@@ -24,7 +24,7 @@ const secciones = {
     </div>
     <div class="about-center">
         <div class="image-card">
-            <img src="ITCA.png" alt="Instalaciones del Instituto Tiburcio Carías Andino">
+            <img src="pantera1.png" alt="Instalaciones del Instituto Tiburcio Carías Andino">
         </div>
     </div>
 
@@ -502,6 +502,15 @@ galeria: `
     </section>
     `,
 
+document.getElementById("topBtn")
+.addEventListener("click", () => {
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+});
     
 
 function cargarSeccion(nombre) {
